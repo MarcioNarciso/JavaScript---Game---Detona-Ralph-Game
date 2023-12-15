@@ -1,10 +1,6 @@
-## Awesome JSGame Detona Ralph
+## Awesome Detona Ralph Game made in JS
 
-<p align="center">
-  <img src="https://github.com/digitalinnovationone/jsgame-detona-ralph/raw/main/assets/images/logo.png" alt="JSGame Detona Ralph Logo">
-</p>
-
-Bem-vindo ao **JSGame Detona Ralph**! Neste repositório, você encontrará um jogo divertido baseado no famoso filme "Detona Ralph". Este projeto não apenas oferece entretenimento, mas também demonstra várias técnicas avançadas de desenvolvimento de jogos em JavaScript.
+Bem-vindo ao **Detona Ralph Game**! Neste repositório, você encontrará um jogo divertido baseado no famoso filme "Detona Ralph". Este projeto não apenas oferece entretenimento, mas também demonstra várias técnicas de desenvolvimento de jogos em JavaScript. Também utilizado para praticar JavaScript e CSS.
 
 ### Tecnologias Utilizadas
 
@@ -14,7 +10,8 @@ Bem-vindo ao **JSGame Detona Ralph**! Neste repositório, você encontrará um j
 
 ### Funcionalidades Incríveis
 
-- **Sistema de Pontuação**: Acompanhe sua pontuação à medida que progride no jogo e desafie seus amigos a superá-la, clique no quadrado que o Ralph se encontre
+- **Sistema de Pontuação**: Acompanhe sua pontuação à medida que progride no jogo e desafie seus amigos a superá-la, clique no quadrado que o Ralph se encontre;
+- **Contador de Vidas**: A cada vez que errar o Ralph, perderá uma vida. Zere suas vidas e o jogo terminará.
 
 ### Como Jogar
 
@@ -33,4 +30,4 @@ Este jogo foi desenvolvido como parte de um projeto educacional da Digital Innov
 
 ---
 
-Divirta-se jogando o **JSGame Detona Ralph** enquanto explora as técnicas modernas de desenvolvimento de jogos em JavaScript. Lembre-se de conferir o repositório original [aqui](https://github.com/digitalinnovationone/jsgame-detona-ralph) e deixar uma ⭐️ se você gostou do projeto!
+Divirta-se jogando o **Detona Ralph Game** enquanto explora as técnicas modernas de desenvolvimento de jogos em JavaScript. Lembre-se de conferir o repositório original [aqui](https://github.com/digitalinnovationone/jsgame-detona-ralph) e deixar uma ⭐️ se você gostou do projeto!
