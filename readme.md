@@ -15,6 +15,10 @@ Bem-vindo ao **Detona Ralph Game**! Neste repositório, você encontrará um jog
 
 ### Como Jogar
 
+1. [Acesso o jogo](https://marcionarciso.github.io/JavaScript---Game---Detona-Ralph-Game/)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ou
+
 1. Clone este repositório para sua máquina local.
 2. Abra o arquivo `index.html` em seu navegador web.
 3. Use as setas direcionais para mover o personagem e a barra de espaço para interagir.
