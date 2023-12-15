@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="src/styles/reset.css"/>
     <link rel="stylesheet" href="src/styles/main.css"/>
+    <link rel="stylesheet" href="src/styles/modal.css">
 </head>
 <body>
     <main>
@@ -29,7 +30,7 @@
             </div>
             <div class="menu-lives">
                 <img src="src/images/player.png" alt="Foto do Jogador">
-                <h2>x3</h2>
+                <h2 id="livesCounter">x0</h2>
             </div>
         </section>
 
@@ -51,6 +52,19 @@
             </div>
         </section>
     </main>
+
+
+    <div class="modal-bg">
+        <div class="modal">
+            <div class="content">
+                <span>Game Over!</span>
+                <div>
+                    <p></p>
+                    <a href=".">Try again</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script defer src="src/scripts/engine.js"></script>
 </body>

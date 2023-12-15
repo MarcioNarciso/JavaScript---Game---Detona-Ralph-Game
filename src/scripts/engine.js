@@ -6,13 +6,18 @@ const state = {
         squares : document.querySelectorAll(".square"),
         enemy : document.querySelector(".enemy"),
         timeLeft : document.querySelector("#timeLeft"),
-        score : document.querySelector("#score")
+        score : document.querySelector("#score"),
+        livesCounter : document.querySelector("#livesCounter"),
+        resultGameMessage : document.querySelector(".modal .content div p"),
+        modalResult : document.querySelector(".modal-bg")
     },
     values : {
         gameVelocity: 800,
         hitPosition : 0,
         result: 0,
-        currentTime: 60
+        currentTime: 60,
+        livesCounter : 5,
+        isGameOver : false
     },
     actions : {
         timerId : null,
@@ -27,16 +32,13 @@ function countDown() {
     state.values.currentTime--;
     state.view.timeLeft.textContent = state.values.currentTime;
 
-    if (state.values.currentTime <= 0) {
-        clearInterval(state.actions.countDownTimerId);
-        clearInterval(state.actions.timerId);
-        // Reseta a posição do inimigo
-        state.values.hitPosition = null;
-
-        alert("Game Over! O seu resultado foi: "+state.values.result);
-    }
+    checkGameOver();
 }
 
+/**
+ * Toca o áudio com o nome especificado que está contido no diretório "src/audios/".
+ * @param {string} audioName 
+ */
 function playSound(audioName) {
     const audio = new Audio(`src/audios/${audioName}.m4a`);
     audio.volume = 0.2;
@@ -68,12 +70,51 @@ function refreshEnemyPosition() {
 }
 
 /**
+ * Atualiza o contador de vidas do jogador.
+ */
+function refreshPlayerLives() {
+    state.view.livesCounter.textContent = "x"+state.values.livesCounter;
+}
+
+/**
+ * Função que determina o fim do jogo.
+ */
+function checkGameOver() {
+    const isGameOver = state.values.currentTime <= 0 
+                                || state.values.livesCounter <= 0;
+
+    state.values.isGameOver = isGameOver;
+
+    if (isGameOver) {
+        clearInterval(state.actions.countDownTimerId);
+        clearInterval(state.actions.timerId);
+
+        // Reseta a posição do inimigo
+        state.values.hitPosition = null;
+
+        showModalResult("O seu resultado foi: "+state.values.result);
+
+        playSound("gameOver");
+    }
+}
+
+function showModalResult(msg) {
+    state.view.resultGameMessage.textContent = msg;
+    state.view.modalResult.style.display = "flex";
+}
+
+/**
  * Processa o clique do jogador e calcula o placar
  */
 function addListenerHitBox() {
     state.view.squares.forEach(square => {
         square.addEventListener("click", (event) => {
+            if (state.values.isGameOver) {
+                return;
+            }
+
             const isEnemyHit = square.id === state.values.hitPosition;
+
             if (isEnemyHit) {
                 // Aumenta o placar do jogador
                 state.values.result++;
@@ -81,8 +122,19 @@ function addListenerHitBox() {
                 state.view.score.textContent = state.values.result;
                 // Reseta a posição do inimigo
                 state.values.hitPosition = null;
+
                 playSound("hit");
+            } else {
+                // Subtrai as vidas do jogador
+                state.values.livesCounter--;
+                // Atualiza a exibição das vidas do jogador
+                refreshPlayerLives();
+                // Verifica se o jogo acabou
+                checkGameOver();
+
+                playSound("missHit");
             }
+
         });
     });
 }
@@ -90,6 +142,7 @@ function addListenerHitBox() {
 function init() {
     refreshEnemyPosition();
     addListenerHitBox();
+    refreshPlayerLives();
 }
 
 init();
