@@ -15,7 +15,7 @@ Bem-vindo ao **Detona Ralph Game**! Neste repositório, você encontrará um jog
 
 ### Como Jogar
 
-1. [Acesso o jogo](https://marcionarciso.github.io/JavaScript---Game---Detona-Ralph-Game/)
+1. [Acesse o jogo](https://marcionarciso.github.io/JavaScript---Game---Detona-Ralph-Game/)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ou
 
