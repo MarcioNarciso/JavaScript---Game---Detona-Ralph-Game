@@ -92,7 +92,7 @@ function checkGameOver() {
         // Reseta a posição do inimigo
         state.values.hitPosition = null;
 
-        showModalResult("O seu resultado foi: "+state.values.result);
+        showModalResult("Your score: "+state.values.result);
 
         playSound("gameOver");
     }
